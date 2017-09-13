@@ -65,11 +65,12 @@ start() {
 stop() {
 	/etc/init.d/gw-redsocks stop
     #/etc/init.d/dnscrypt-proxy stop
-	
+
 	service_stop /usr/bin/dns2socks
 	service_stop /usr/bin/ss-local
 	service_stop /usr/bin/ss-redir
 	/etc/init.d/dnsmasq restart
+	/usr/bin/lua /lib/ss-test.lua
 }
 
 restart() {
